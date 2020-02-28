@@ -15,8 +15,8 @@ prompt.get(['name', 'CSC141', 'CSC142', 'CSC241', 'CSC242'], function (err, resu
     console.log('  CSC241: ' + result.CSC241);
     console.log('  CSC242: ' + result.CSC242);
 
-    let x = result.CSC141 + result.CSC142 + result.CSC241 + result.CSC242;
-    let gpa = x / 4;
+    let x = parseInt(result.CSC141) + parseInt(result.CSC142) + parseInt(result.CSC241) + parseInt(result.CSC242);
+    let gpa = parseFloat(x / 4).toFixed(1);
     console.log(' GPA: ' + gpa);
 });
 
