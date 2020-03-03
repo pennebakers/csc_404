@@ -4,18 +4,32 @@ const classes = {
     properties: {
         Name: {
             name: 'name',
+            pattern: /^[a-zA-Z]+$/,
+            message: 'Name must be only letters',
         },
         CSC141: {
             name: 'csc141',
+            pattern: /^[a-dfA-dF\-\+]+$/,
+            message: 'LowerCase or UpperCase with - or + only (a,b,c,d,f) (A,B,C,D,F) (-, +)',
+            required: true,
         },
         CSC142: {
-            name: 'csc142'
+            name: 'csc142',
+            pattern: /^[a-dfA-dF\-\+]+$/,
+            message: 'LowerCase or UpperCase with - or + only (a,b,c,d,f) (A,B,C,D,F) (-, +)',
+            required: true,
         },
         CSC241: {
-            name: 'csc241'
+            name: 'csc241',
+            pattern: /^[a-dfA-dF\-\+]+$/,
+            message: 'LowerCase or UpperCase with - or + only (a,b,c,d,f) (A,B,C,D,F) (-, +)',
+            required: true,
         },
         CSC242: {
-            name: 'csc242'
+            name: 'csc242',
+            pattern: /^[a-dfA-dF\-\+]+$/,
+            message: 'LowerCase or UpperCase with - or + only (a,b,c,d,f) (A,B,C,D,F) (-, +)',
+            required: true,
         }
     }
 };
@@ -38,7 +52,10 @@ function getStudent() {
         'F': 0.0
     };
 
+
     prompt.start();
+    
+
     console.log('Enter your letter grades for the following classes');
 
 
@@ -46,23 +63,25 @@ function getStudent() {
         if (err) {
             return onErr(err);
         }
+        
         let gpa = 0.0;
 
-        gpa = gpa + grades[result.CSC141];
-        gpa = gpa + grades[result.CSC142];
-        gpa = gpa + grades[result.CSC241];
+        gpa = parseFloat(gpa + grades[result.CSC141]);
+        gpa = parseFloat(gpa + grades[result.CSC142]);
+        gpa = parseFloat(gpa + grades[result.CSC241]);
         gpa = parseFloat(gpa + grades[result.CSC242]);
-        gpa = gpa / 4;
+        gpa = parseFloat(gpa / 4);
 
-        console.log('Command-line input received:');
+        console.log('Command-line input received:');        
         console.log('  Name: ' + result.Name);
         console.log('  CSC141: ' + result.CSC141);
         console.log('  CSC142: ' + result.CSC142);
         console.log('  CSC241: ' + result.CSC241);
         console.log('  CSC242: ' + result.CSC242);
         console.log('  GPA: ' + gpa);
-    });
-}
+   });
+  }
+
 
 function onErr(err) {
     console.log(err);
