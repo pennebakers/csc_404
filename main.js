@@ -52,7 +52,6 @@ function getStudent() {
         'F': 0.0
     };
 
-
     prompt.start();
     
 
@@ -63,23 +62,23 @@ function getStudent() {
         if (err) {
             return onErr(err);
         }
-        
+
         let gpa = 0.0;
 
-        gpa = parseFloat(gpa + grades[result.CSC141]);
-        gpa = parseFloat(gpa + grades[result.CSC142]);
-        gpa = parseFloat(gpa + grades[result.CSC241]);
-        gpa = parseFloat(gpa + grades[result.CSC242]);
+        gpa = parseFloat(gpa + grades[result.CSC141.toUpperCase()]);
+        gpa = parseFloat(gpa + grades[result.CSC142.toUpperCase()]);
+        gpa = parseFloat(gpa + grades[result.CSC241.toUpperCase()]);
+        gpa = parseFloat(gpa + grades[result.CSC242.toUpperCase()]);
         gpa = parseFloat(gpa / 4);
 
-        console.log('Command-line input received:');        
+        console.log('Command-line input received:');
         console.log('  Name: ' + result.Name);
         console.log('  CSC141: ' + result.CSC141);
         console.log('  CSC142: ' + result.CSC142);
         console.log('  CSC241: ' + result.CSC241);
         console.log('  CSC242: ' + result.CSC242);
         console.log('  GPA: ' + gpa);
-   });
+    });
   }
 
 
