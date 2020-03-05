@@ -82,6 +82,11 @@ function getStudent() {
         console.log('  CSC241: ' + result.CSC241);
         console.log('  CSC242: ' + result.CSC242);
         console.log('  GPA: ' + gpa);
+        if(gpa >= 2.5){
+            console.log('Qualified');
+        }else{
+            console.log('Not Qualified');
+        }
     });
   }
 
