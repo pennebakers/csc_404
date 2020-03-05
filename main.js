@@ -6,29 +6,29 @@ const classes = {
             name: 'name',
             pattern: /^[a-zA-Z\s]+$/,
             message: 'Name must be only letters',
-            required: true
+            required: true,
         },
         CSC141: {
             name: 'csc141',
-            pattern: /^[a-dfA-DF\-\+]+$/,
+            pattern: /^[a-dfA-DF]{1,1}[\-\+]{0,1}$/,
             message: 'LowerCase or UpperCase with - or + only (a,b,c,d,f) (A,B,C,D,F) (-, +)',
             required: true,
         },
         CSC142: {
             name: 'csc142',
-            pattern: /^[a-dfA-DF\-\+]+$/,
+            pattern: /^[a-dfA-DF]{1,1}[\-\+]{0,1}$/,
             message: 'LowerCase or UpperCase with - or + only (a,b,c,d,f) (A,B,C,D,F) (-, +)',
             required: true,
         },
         CSC241: {
             name: 'csc241',
-            pattern: /^[a-dfA-DF\-\+]+$/,
+            pattern: /^[a-dfA-DF]{1,1}[\-\+]{0,1}$/,
             message: 'LowerCase or UpperCase with - or + only (a,b,c,d,f) (A,B,C,D,F) (-, +)',
             required: true,
         },
         CSC242: {
             name: 'csc242',
-            pattern: /^[a-dfA-DF\-\+]+$/,
+            pattern: /^[a-dfA-DF]{1,1}[\-\+]{0,1}$/,
             message: 'LowerCase or UpperCase with - or + only (a,b,c,d,f) (A,B,C,D,F) (-, +)',
             required: true,
         }
@@ -39,8 +39,8 @@ getStudent();
 
 function getStudent() {
     var grades = {
-        'A+': 4.0,
         'A': 4.0,
+        'A+': 4.0,
         'A-': 3.67,
         'B+': 3.33,
         'B': 3.0,
@@ -51,8 +51,9 @@ function getStudent() {
         'D+': 1.33,
         'D': 1.00,
         'D-': 0.67,
-        'F': 0.0,
-        'F-': 0.0
+        'F+': 0,
+        'F-': 0,
+        'F': 0.0
     };
 
     prompt.start();
@@ -80,10 +81,6 @@ function getStudent() {
         console.log('  CSC142: ' + result.CSC142);
         console.log('  CSC241: ' + result.CSC241);
         console.log('  CSC242: ' + result.CSC242);
-        if(gpa >= 2.5)
-            console.log('Qualified');
-        else
-            console.log('Not Qualified');
         console.log('  GPA: ' + gpa);
     });
   }
