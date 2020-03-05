@@ -4,32 +4,32 @@ const classes = {
     properties: {
         Name: {
             name: 'name',
-            pattern: /^[a-zA-Z\s]+$/,
-            message: 'Name must be only letters',
+            pattern: /^[a-zA-Z]{0,99}[\s]{0,1}[a-zA-Z]{0,99}$/,
+            message: 'First and Last name with letter characters only with one space in between',
             required: true,
         },
         CSC141: {
             name: 'csc141',
             pattern: /^[a-dfA-DF]{1,1}[\-\+]{0,1}$/,
-            message: 'LowerCase or UpperCase with - or + only (a,b,c,d,f) (A,B,C,D,F) (-, +)',
+            message: 'LowerCase or UpperCase A, B, C, D, F followed by one - or one +',
             required: true,
         },
         CSC142: {
             name: 'csc142',
             pattern: /^[a-dfA-DF]{1,1}[\-\+]{0,1}$/,
-            message: 'LowerCase or UpperCase with - or + only (a,b,c,d,f) (A,B,C,D,F) (-, +)',
+            message: 'LowerCase or UpperCase A, B, C, D, F followed by one - or one +',
             required: true,
         },
         CSC241: {
             name: 'csc241',
             pattern: /^[a-dfA-DF]{1,1}[\-\+]{0,1}$/,
-            message: 'LowerCase or UpperCase with - or + only (a,b,c,d,f) (A,B,C,D,F) (-, +)',
+            message: 'LowerCase or UpperCase A, B, C, D, F followed by one - or one +',
             required: true,
         },
         CSC242: {
             name: 'csc242',
             pattern: /^[a-dfA-DF]{1,1}[\-\+]{0,1}$/,
-            message: 'LowerCase or UpperCase with - or + only (a,b,c,d,f) (A,B,C,D,F) (-, +)',
+            message: 'LowerCase or UpperCase A, B, C, D, F followed by one - or one +',
             required: true,
         }
     }
